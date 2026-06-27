@@ -758,8 +758,8 @@ async def show_video_tajik_callback(update: Update, context: ContextTypes.DEFAUL
             await query.message.reply_video(
                 video=video_file,
                 caption=(
-                    "📍 Улица Дилкушо, 26/1\n"
-                    "Сино район, Душанбе (Ориентир: бозорчаи Ҷал-Ҷам)"
+                    "📍 Авторынок «Мардон Бари», улица Борбад\n"
+                    "Ориентир: KFC"
                 ),
                 supports_streaming=True, # Позволяет смотреть сразу, не скачивая полностью
                 read_timeout=60,
