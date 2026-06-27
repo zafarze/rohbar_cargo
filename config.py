@@ -214,7 +214,7 @@ logger.info("=" * 50)
 
 # Добавляем настройки для видео
 VIDEO_FILES = {
-    "address_tajik": "address_tajik.mov"  # Лучше писать маленькими, как в папке
+    "address_tajik": "img/address_tajik.mov"
 }
 
 VIDEO_ADDRESS_TAJIK_PATH = BASE_DIR / VIDEO_FILES["address_tajik"]
