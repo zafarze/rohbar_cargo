@@ -709,18 +709,18 @@ async def show_address_callback(update: Update, context: ContextTypes.DEFAULT_TY
 
         # Текст кнопок на языках
         btn_video = "🎬 Video Guide"
-        btn_map = "🗺 Yandex Map"
+        btn_map = "🗺 Google Maps"
         if lang == 'ru':
             btn_video = "🎬 Видео проезда (Нажми)"
-            btn_map = "🗺 Яндекс Карта"
+            btn_map = "🗺 Google Maps"
         elif lang == 'tg':
             btn_video = "🎬 Видео роҳбалад (Зер кунед)"
-            btn_map = "🗺 Харитаи Яндекс"
+            btn_map = "🗺 Google Maps"
 
-        YANDEX_MAP_URL = "https://yandex.ru/maps?whatshere%5Bpoint%5D=68.80115912695844%2C38.57415557386223&whatshere%5Bzoom%5D=16.0&ll=68.80147703204655%2C38.57502679530826&z=16.0&si=zafarze"
+        GOOGLE_MAP_URL = "https://maps.google.com/?q=38.522985,68.748433"
 
         keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton(btn_map, url=YANDEX_MAP_URL)],
+            [InlineKeyboardButton(btn_map, url=GOOGLE_MAP_URL)],
             [InlineKeyboardButton(btn_video, callback_data="show_video_tajik")]
         ])
 

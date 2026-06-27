@@ -93,8 +93,7 @@ TEXTS = {
             "📍 <b>Наш адрес в Душанбе:</b>\n\n"
             "🏪 Авторынок «Мардон Бари», улица Борбад\n"
             "🍗 Ориентир: KFC\n\n"
-            "📞 Телефон: +992 777 00 28 27\n\n"
-            "🗺 <a href='https://maps.google.com/?q=38.522985,68.748433'>Открыть на Google Maps</a>"
+            "📞 Телефон: +992 777 00 28 27"
         ),
         "image_received": "Изображение получено. Пока я не обрабатываю изображения, но могу помочь с чем-то другим! 😊",
         "error": "Произошла ошибка. Попробуйте снова или начните с /start.",
@@ -350,8 +349,7 @@ TEXTS = {
             "📍 <b>Our address in Dushanbe:</b>\n\n"
             "🏪 Mardon Bari Auto Market, Borbad Street\n"
             "🍗 Landmark: KFC\n\n"
-            "📞 Phone: +992 777 00 28 27\n\n"
-            "🗺 <a href='https://maps.google.com/?q=38.522985,68.748433'>Open in Google Maps</a>"
+            "📞 Phone: +992 777 00 28 27"
         ),
         "image_received": "Image received. I can't process images yet, but I can help with something else! 😊",
         "error": "An error occurred. Please try again or start with /start.",
@@ -598,8 +596,7 @@ TEXTS = {
             "📍 <b>Суроғаи мо дар Душанбе:</b>\n\n"
             "🏪 Автобазори «Мардон Бари», кӯчаи Борбад\n"
             "🍗 Нишона: KFC\n\n"
-            "📞 Телефон: +992 777 00 28 27\n\n"
-            "🗺 <a href='https://maps.google.com/?q=38.522985,68.748433'>Дар Google Maps кушоед</a>"
+            "📞 Телефон: +992 777 00 28 27"
         ),
         "image_received": "Тасвир қабул шуд. Ман ҳоло тасвирҳоро коркард намекунам, аммо метавонам бо чизи дигар кӯмак кунам! 😊",
         "error": "Хатогӣ рух дод. Лутфан боз кӯшиш кунед ё аз /start оғоз кунед.",
