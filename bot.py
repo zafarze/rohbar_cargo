@@ -3,6 +3,7 @@
 import logging
 import asyncio
 import os
+import socket
 import sys
 from pathlib import Path  # Добавлено для работы с путями
 from dotenv import load_dotenv
@@ -78,6 +79,27 @@ async def post_init(app: Application) -> None:
             logger.info(f"✅ Файл {name}: {path} - найден")
         else:
             logger.warning(f"❌ Файл {name}: {path} - НЕ НАЙДЕН!")
+
+# --- Защита от запуска второго экземпляра ---
+# Telegram отдаёт обновления только одному соединению: если бот запущен дважды,
+# оба экземпляра начинают падать с ошибкой "Conflict: terminated by other getUpdates".
+# Занимаем локальный порт — второй экземпляр не сможет его занять и сразу выйдет.
+SINGLE_INSTANCE_PORT = 47654
+_instance_lock_socket = None
+
+def acquire_single_instance_lock() -> bool:
+    """Пытается занять порт-блокировку. False — бот уже запущен."""
+    global _instance_lock_socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        sock.bind(("127.0.0.1", SINGLE_INSTANCE_PORT))
+        sock.listen(1)
+    except OSError:
+        sock.close()
+        return False
+    # Держим ссылку, чтобы сокет не закрылся сборщиком мусора.
+    _instance_lock_socket = sock
+    return True
 
 async def post_shutdown(app: Application) -> None:
     """Выполняется при остановке бота."""
@@ -161,6 +183,13 @@ def main() -> None:
     setup_logging()
     
     logger.info("--- Запуск Бота (режим PostgreSQL) ---")
+
+    if not acquire_single_instance_lock():
+        logger.critical(
+            "❌ Бот уже запущен в другом процессе — этот экземпляр остановлен. "
+            "Закройте лишнее окно терминала и запустите бота только один раз."
+        )
+        return
 
     if not BOT_TOKEN:
         logger.critical("❌ Токен бота не установлен! Проверьте .env файл")

@@ -87,8 +87,8 @@ from texts import TEXTS
 from admin_utils import notify_admins
 
 CONTACT_PHONE = "+992909020003"
-CONTACT_INSTAGRAM = "F95cargo"
-CONTACT_INSTAGRAM_URL = "https://www.instagram.com/F95cargo"
+CONTACT_INSTAGRAM = "rohbarcargo"
+CONTACT_INSTAGRAM_URL = "https://www.instagram.com/rohbarcargo"
 
 def create_admin_regex(key_index_tuple):
     """
@@ -151,8 +151,20 @@ async def check_subscription(user_id: int, context: ContextTypes.DEFAULT_TYPE) -
         return member.status in ['creator', 'administrator', 'member']
     except Exception as e:
         logger.error(f"Ошибка проверки подписки для {user_id} в {CHANNEL_USERNAME}: {e}")
-        if "chat not found" in str(e) or "bot is not a member" in str(e):
-            logger.warning(f"Проверка подписки не удалась. Разрешаю доступ.")
+        # Бот не может проверить подписку (не админ в канале, канал не найден и т.п.).
+        # Не запираем пользователя — пропускаем и пишем предупреждение в лог.
+        error_text = str(e).lower()
+        cannot_verify = (
+            "chat not found",
+            "bot is not a member",
+            "member list is inaccessible",
+            "not enough rights",
+        )
+        if any(reason in error_text for reason in cannot_verify):
+            logger.warning(
+                f"Проверка подписки невозможна ({e}). Разрешаю доступ. "
+                f"Добавьте бота администратором в {CHANNEL_USERNAME}."
+            )
             return True
         return False
 
