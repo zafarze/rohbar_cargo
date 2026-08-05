@@ -2,9 +2,11 @@
 # bot.py
 import logging
 import asyncio
+import errno
 import os
 import socket
 import sys
+import zlib
 from pathlib import Path  # Добавлено для работы с путями
 from dotenv import load_dotenv
 
@@ -84,7 +86,11 @@ async def post_init(app: Application) -> None:
 # Telegram отдаёт обновления только одному соединению: если бот запущен дважды,
 # оба экземпляра начинают падать с ошибкой "Conflict: terminated by other getUpdates".
 # Занимаем локальный порт — второй экземпляр не сможет его занять и сразу выйдет.
-SINGLE_INSTANCE_PORT = 47654
+# Порт считается из пути к папке бота: копии проекта в других папках получат
+# свой порт и не будут мешать друг другу на одном сервере.
+SINGLE_INSTANCE_PORT = 45000 + (
+    zlib.crc32(str(Path(__file__).resolve().parent).encode()) % 2000
+)
 _instance_lock_socket = None
 
 def acquire_single_instance_lock() -> bool:
@@ -94,9 +100,14 @@ def acquire_single_instance_lock() -> bool:
     try:
         sock.bind(("127.0.0.1", SINGLE_INSTANCE_PORT))
         sock.listen(1)
-    except OSError:
+    except OSError as e:
         sock.close()
-        return False
+        if e.errno in (errno.EADDRINUSE, errno.EACCES) or "in use" in str(e).lower():
+            return False
+        # Занять порт не вышло по другой причине (запрет сети и т.п.) —
+        # не мешаем боту работать, просто предупреждаем.
+        logger.warning(f"⚠️ Не удалось занять порт-блокировку ({e}). Проверка пропущена.")
+        return True
     # Держим ссылку, чтобы сокет не закрылся сборщиком мусора.
     _instance_lock_socket = sock
     return True
