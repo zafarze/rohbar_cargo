@@ -25,7 +25,7 @@ TEXTS = {
             "Ассалому алейкум!\n"
             "🚚 Ваш груз с трек-кодом <b>{code}</b> прибыл на склад Rohbar Cargo в г. Душанбе!\n"
             "🗓️ <b>Дата прибытия:</b> {date}\n\n"
-            "📞 Пожалуйста, свяжитесь с нами для получения груза: <code>+992 909 02 00 03</code>.\n\n"
+            "📞 Пожалуйста, свяжитесь с нами для получения груза: <code>+992 777 00 28 27</code>.\n\n"
             "✨ Rohbar Cargo! Надежное, быстрое карго по доступной цене."
         ),
         "track_code_not_found": "❌ Ваш груз пока не поступил на склад Rohbar Cargo в г. Иу.",
@@ -47,12 +47,12 @@ TEXTS = {
         "dushanbe_arrival_notification": (
             "🚚 Уважаемый клиент!\n"
             "Ваш груз с трек-кодом '{code}' прибыл на склад Rohbar Cargo в г. Душанбе!\n"
-            "📞 Пожалуйста, свяжитесь с нами для получения груза: +992 909 02 00 03."
+            "📞 Пожалуйста, свяжитесь с нами для получения груза: +992 777 00 28 27."
         ),
         "pickup_reminder": (
             "⏰ Напоминание! Ваш груз с трек-кодом <b>{code}</b> уже несколько дней ждёт вас на складе в Душанбе.\n\n"
             "🚚 Хотите заказать доставку? Откройте меню → Личный кабинет → Заказать доставку\n\n"
-            "📞 Или свяжитесь с нами: +992 909 02 00 03"
+            "📞 Или свяжитесь с нами: +992 777 00 28 27"
         ),
         "contacts": (
             "Rohbar Cargo\n"
@@ -280,7 +280,7 @@ TEXTS = {
             "Assalomu alaykum!\n"
             "🚚 Your cargo with track code <b>{code}</b> has arrived at the Rohbar Cargo warehouse in Dushanbe!\n"
             "🗓️ <b>Date of arrival:</b> {date}\n\n"
-            "📞 Please contact us to pick up your cargo: <code>+992 909 02 00 03</code>.\n\n"
+            "📞 Please contact us to pick up your cargo: <code>+992 777 00 28 27</code>.\n\n"
             "✨ Rohbar Cargo! Reliable, fast cargo at an affordable price."
         ),
         "track_code_not_found": "❌ Your cargo has not yet arrived at the Rohbar Cargo warehouse in Yiwu.",
@@ -302,18 +302,18 @@ TEXTS = {
         "dushanbe_arrival_notification": (
             "🚚 Dear Customer!\n"
             "Your cargo with track code '{code}' has arrived at the Rohbar Cargo warehouse in Dushanbe!\n"
-            "📞 Please contact us to pick up your cargo: +992 909 02 00 03."
+            "📞 Please contact us to pick up your cargo: +992 777 00 28 27."
         ),
         "pickup_reminder": (
             "⏰ Reminder! Your cargo with track code <b>{code}</b> has been waiting for you at the Dushanbe warehouse for several days.\n\n"
             "🚚 Want to order delivery? Open menu → Personal Cabinet → Request Delivery\n\n"
-            "📞 Or contact us: +992 909 02 00 03"
+            "📞 Or contact us: +992 777 00 28 27"
         ),
         "contacts": (
             "Rohbar Cargo\n"
             "Working hours: 9:00 to 16:00\n"
             "Break: 12:45 to 14:00\n\n"
-            "📞 Phone: <code>+992 909 02 00 03</code>\n"
+            "📞 Phone: <code>+992 777 00 28 27</code>\n"
             "Instagram: rohbarcargo"
         ),
         "prices_text": (
@@ -528,7 +528,7 @@ TEXTS = {
             "Ассалому алайкум!\n"
             "🚚 Бори шумо бо трек-коди <b>{code}</b> ба анбори Rohbar Cargo дар ш. Душанбе расид!\n"
             "🗓️ <b>Санаи расидан:</b> {date}\n\n"
-            "📞 Лутфан барои гирифтани бор бо мо тамос гиред: <code>+992 909 02 00 03</code>.\n\n"
+            "📞 Лутфан барои гирифтани бор бо мо тамос гиред: <code>+992 777 00 28 27</code>.\n\n"
             "✨ Кайҳон Карго! Каргои боэтимод, зуд ва бо нархи дастрас."
         ),
         "track_code_not_found": "❌ Бори Шумо то ҳол дар анбори Rohbar Cargo дар ш. Иву наомадааст.",
@@ -550,12 +550,12 @@ TEXTS = {
         "dushanbe_arrival_notification": (
             "🚚 Мизоҷи муҳтарам!\n"
             "Бори шумо бо трек-коди '{code}' ба анбори Rohbar Cargo дар ш. Душанбе расид!\n"
-            "📞 Лутфан барои гирифтани бор бо мо тамос гиред: +992 909 02 00 03."
+            "📞 Лутфан барои гирифтани бор бо мо тамос гиред: +992 777 00 28 27."
         ),
         "pickup_reminder": (
             "⏰ Еслоба! Бори шумо бо трек-коди <b>{code}</b> чанд рӯз аст дар анбори Душанбе мунтазир аст.\n\n"
             "🚚 Дархости расонидан мехоҳед? Меню → Утоқи шахсӣ → Дархости расонидан\n\n"
-            "📞 Я бо мо тамос гиред: +992 909 02 00 03"
+            "📞 Я бо мо тамос гиред: +992 777 00 28 27"
         ),
         "contacts": (
             "Rohbar Cargo\n"

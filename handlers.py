@@ -86,7 +86,7 @@ from db_utils import (
 from texts import TEXTS
 from admin_utils import notify_admins
 
-CONTACT_PHONE = "+992909020003"
+CONTACT_PHONE = "+992777002827"
 CONTACT_INSTAGRAM = "rohbarcargo"
 CONTACT_INSTAGRAM_URL = "https://www.instagram.com/rohbarcargo"
 
